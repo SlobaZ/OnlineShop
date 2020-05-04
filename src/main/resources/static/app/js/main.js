@@ -213,13 +213,6 @@ onlineshopApp.controller("AddKorisnikCtrl", function($scope, $http, $routeParams
 
 
 
-
-
-
-
-
-
-
 // PROIZVODI
 
 onlineshopApp.controller("ProizvodiCtrl", function($scope, $http, $location, $window){
@@ -388,12 +381,6 @@ onlineshopApp.controller("AddProizvodCtrl", function($scope, $http, $routeParams
 
 
 
-
-
-
-
-
-
 //  KUPOVINE
 
 
@@ -520,6 +507,7 @@ onlineshopApp.controller("AddKupovinaCtrl", function($scope, $http, $routeParams
 
 
 
+//  STAVKE
 
 onlineshopApp.controller("StavkeCtrl", function($scope, $http, $routeParams, $location , $log , $window ){
 	
@@ -585,11 +573,5 @@ onlineshopApp.controller("StavkeCtrl", function($scope, $http, $routeParams, $lo
 	
 	
 });
-
-
-
-
-
-
 
 
