@@ -543,8 +543,21 @@ onlineshopApp.controller("StavkeCtrl", function($scope, $http, $routeParams, $lo
 	
 	
 	
-	$scope.doOdaberiStavku = function(id,kolicinaStavke){
+	$scope.doKupiStavku = function(id,kolicinaStavke){
 		$http.post(url + "/" + id + "/" + kolicinaStavke + "/kupiStavku").then(
+				function success(res){
+					getStavke();
+					alert("Succes!");
+				},
+				function error(){
+					alert("Ne mogu izvrsiti odabranu Stavku!");
+				}	
+		);
+	}
+	
+	
+	$scope.doResetujStavku = function(id){
+		$http.post(url + "/" + id +  "/resetujStavku").then(
 				function success(res){
 					getStavke();
 					alert("Succes!");
