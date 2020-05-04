@@ -9,9 +9,9 @@
 	font-weight: bold;
 }
 .table .thead-dark th {
-  color: #fff;
-  background-color: #22a6b3;
-  border-color:  #22a6b3; 
+  	color: #fff;
+  	background-color: #22a6b3;
+  	border-color:  #22a6b3; 
 }
 .btn{
 	border: 1.3px solid black;
