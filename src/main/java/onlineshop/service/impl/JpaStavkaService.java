@@ -79,5 +79,17 @@ public class JpaStavkaService implements StavkaService {
 		return stavka;
 	}
 	
+	@Override
+	public Stavka resetujStavku(Integer id) {
+		Stavka stavka = stavkaRepository.getOne(id);
+		Proizvod proizvod = stavka.getProizvod();
+		proizvod.setKolicina( proizvod.getKolicina() + stavka.getKolicinaStavke() ); 
+		stavka.setCenaStavke(0.0);
+		stavka.setKolicinaStavke(0);
+		proizvodRepository.save(proizvod);
+		stavkaRepository.save(stavka);
+		return stavka;
+	}
+	
 
 }
