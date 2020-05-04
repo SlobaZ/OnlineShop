@@ -116,7 +116,15 @@ public class ApiStavkaController {
 	}
 	
 	
-	
+	@RequestMapping(value="/{id}/resetujStavku" , method=RequestMethod.POST)
+	public ResponseEntity<StavkaDTO> resetujStavku(@PathVariable Integer id){
+
+		Stavka stavka = stavkaService.resetujStavku(id);
+		if(stavka==null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>( toDTO.convert(stavka), HttpStatus.CREATED);
+	}
 	
 
 }
