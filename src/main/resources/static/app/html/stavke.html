@@ -7,40 +7,41 @@
 
 <div class="col-12">
 				
-			<table class="table table-bordered table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>ID</th>
-						<th>Proizvod</th>
-						<th>Kolicina</th>
-						<th>Cena</th>
-						<th>Komada</th>
-						<th>Cena Stavke</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="s in stavke">
-						<td>{{s.id}}</td>
-						<td>{{s.proizvodNaziv}}</td>
-						<td>{{s.proizvodKolicina}}</td>
-						<td>{{s.proizvodCena}} din</td>
-						<td><input class="form-control" size="2" ng-model="kolicinaStavke"/></td>
-						<td>{{s.cenaStavke}}</td>
-						<td><button class="btn btn-primary" ng-click="doOdaberiStavku(s.id,kolicinaStavke)">Odaberi Stavku</button></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><button class="btn btn-danger" ng-click="doKupi()">Kupi</button></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Proizvod</th>
+					<th>Kolicina</th>
+					<th>Cena</th>
+					<th>Komada</th>
+					<th>Cena Stavke</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in stavke">
+					<td>{{s.id}}</td>
+					<td>{{s.proizvodNaziv}}</td>
+					<td>{{s.proizvodKolicina}}</td>
+					<td>{{s.proizvodCena}} din</td>
+					<td><input class="form-control" size="2" ng-model="kolicinaStavke"/></td>
+					<td>{{s.cenaStavke}}</td>
+					<td><button class="btn btn-primary" ng-click="doKupiStavku(s.id,kolicinaStavke)">Odaberi Stavku</button></td>
+					<td><button class="btn btn-info" ng-click="doResetujStavku(s.id)">Resetuj</button></td></tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><button class="btn btn-danger btn-lg" ng-click="doKupi()">Kupi</button></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 		
 		
 		
