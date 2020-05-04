@@ -1,0 +1,44 @@
+<div ng-controller="EditKorisnikCtrl">
+<br/>
+<h1>Edit Korisnik</h1>
+	<form>
+		<div class="form-group">
+			<label>Ime i Prezime</label>
+			<input class="form-control" ng-model="korisnik.naziv" />
+		</div>
+		
+		<div class="form-group">
+			<label>JMBG</label>
+			<input class="form-control" ng-model="korisnik.jmbg"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Mesto</label>
+			<input class="form-control" ng-model="korisnik.mesto"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Adresa</label>
+			<input class="form-control" ng-model="korisnik.adresa"/>
+		</div>
+				
+		<div class="form-group">
+			<label>Telefon</label>
+			<input class="form-control" ng-model="korisnik.telefon"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Broj Racuna</label>
+			<input class="form-control" ng-model="korisnik.brojracuna"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Stanje</label>
+			<input class="form-control" ng-model="korisnik.stanje"/>
+		</div>
+		
+
+		<button class="btn btn-primary" ng-click="doEdit()">Edit</button>
+	</form>
+	
+</div>

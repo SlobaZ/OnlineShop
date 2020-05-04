@@ -1,0 +1,10 @@
+CREATE USER IF NOT EXISTS root IDENTIFIED BY 'root';
+
+DROP DATABASE IF EXISTS onlineshop;
+CREATE DATABASE onlineshop DEFAULT CHARACTER SET utf8;
+
+USE onlineshop;
+
+GRANT ALL ON onlineshop.* TO 'root'@'%';
+
+FLUSH PRIVILEGES;

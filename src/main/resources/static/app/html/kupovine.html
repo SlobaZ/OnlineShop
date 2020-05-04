@@ -1,0 +1,82 @@
+<div ng-controller="KupovineCtrl">
+
+	<br/>	
+	<h2>Kupovine</h2>
+	
+<div class="row">		
+		<div class="col-md-7">
+		<form>
+			<div class="form-group">
+				<label>Korisnik</label> 
+					<select class="form-control" ng-model="search.korisnikId">
+						<option ng-repeat="k in korisnici" value="{{k.id}}">{{k.naziv}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label>Sifra</label>
+				<input ng-model="search.sifra" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Ukupna Cena:</label>
+				<input ng-model="search.ukupnaCena" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Datum veci od:</label>
+				<input ng-model="search.datumvremePocetak" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Datum manji od:</label>
+				<input ng-model="search.datumvremeKraj" class="form-control">
+			</div>
+			<button ng-click="doSearch()" class="btn btn-primary">Search</button>
+		</form>	
+	</div>
+	
+	<div class="col-md-5">
+		<br/>
+		<h3 class="centrirano">Unos nove kupovine:</h3>
+		<br/>
+		<div class="centrirano">
+		<button class="btn btn-primary" ng-click="goToAdd()">Add New</button>
+		</div>
+	</div>
+</div>		
+		
+
+
+<form>	
+		<div class="col-12">
+		
+		<div style="margin-bottom:10px" class="btn-group float-right">
+			<button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-primary">Previous</button>
+			<button ng-disabled="pageNum == totalPages - 1" ng-click="changePage(1)" class="btn btn-primary">Next</button>
+		</div>		
+		
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>ID</th>
+						<th>Sifra</th>
+						<th>Kupac</th>
+						<th>Datum i Vreme</th>
+						<th>Ukupna cena</th>
+						<th>Izaberi kupovinu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="k in kupovine">
+						<td>{{k.id}}</td>
+						<td>{{k.sifra}}</td>
+						<td>{{k.korisnikNaziv}}</td>
+						<td>{{k.dateTime}}</td>
+						<td>{{k.ukupnaCena}} din</td>
+						<td><button class="btn btn-warning" ng-click="doOdaberiKupovinu(k.id)" >Izaberi Kupovinu</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+	<br/>	
+
+</form>	
+</div>

@@ -1,0 +1,15 @@
+.navbar-nav {
+	margin-left: 80px;
+}
+.nav-item {
+	margin-left: 50px;
+}
+.nav-item a{
+	font-size:26px;
+	font-weight: bold;
+}
+.table .thead-dark th {
+  color: #fff;
+  background-color: #22a6b3;
+  border-color:  #22a6b3; 
+}

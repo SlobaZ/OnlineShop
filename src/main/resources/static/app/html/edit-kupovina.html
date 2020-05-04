@@ -1,0 +1,34 @@
+<div ng-controller="EditKupovinaCtrl">
+<br/>
+<h1>Edit Kupovina</h1>
+	<form>
+		<div class="form-group">
+			<label>Sifra</label>
+			<input class="form-control" ng-model="kupovina.sifra" />
+		</div>
+		
+		<div class="form-group">
+			<label>Kolicina</label>
+			<input class="form-control" ng-model="kupovina.kolicina"/>
+		</div>
+		
+
+		<div class="form-group">
+			<label>Proizvod</label>
+			<select ng-model="kupovina.proizvodId"  class="form-control">
+				<option ng-repeat="p in proizvodi" ng-selected="p.id == kupovina.proizvodId" value="{{p.id}}">{{p.naziv}}</option>
+			</select>
+		</div>
+		
+		<div class="form-group">
+			<label>Korisnik</label>
+			<select ng-model="kupovina.korisnikId"  class="form-control">
+				<option ng-repeat="k in korisnici" ng-selected="k.id == kupovina.korisnikId" value="{{k.id}}">{{k.naziv}}</option>
+			</select>
+		</div>
+		
+		
+		<button class="btn btn-primary" ng-click="doEdit()">Edit</button>
+	</form>
+
+</div>

@@ -1,0 +1,24 @@
+<div ng-controller="EditProizvodCtrl">
+<br/>
+<h1>Edit Proizvod</h1>
+	<form>
+		<div class="form-group">
+			<label>Naziv proizvoda</label>
+			<input class="form-control" ng-model="proizvod.naziv" />
+		</div>
+		
+		<div class="form-group">
+			<label>Kolicina</label>
+			<input class="form-control" ng-model="proizvod.kolicina"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Cena</label>
+			<input class="form-control" ng-model="proizvod.cena"/>
+		</div>
+		
+
+		<button class="btn btn-primary" ng-click="doEdit()">Edit</button>
+	</form>
+	
+</div>

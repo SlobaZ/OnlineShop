@@ -1,0 +1,71 @@
+<div ng-controller="KorisniciCtrl">
+
+	<br/>	
+	<h3 class="centrirano">Klijenti</h3>
+	
+	<div class="row">		
+		<div class="col-md-7">
+		<h3>Pretraga korisnika:</h3>
+		<form>
+			<div class="form-group">
+				<label>Ime i Prezime</label>
+				<input ng-model="search.naziv" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Mesto</label>
+				<input ng-model="search.mesto" class="form-control">
+			</div>
+			
+			<button ng-click="doSearch()" class="btn btn-primary">Search</button>
+		</form>	
+	</div>
+	<div class="col-md-5">
+	<br/>
+	<h3 class="centrirano">Unos novog korisnika:</h3>
+	<br/>
+	<div class="centrirano">
+	<button class="btn btn-primary" ng-click="goToAdd()">Add New</button>
+	</div>
+	</div>
+	</div>
+	<br/>
+			
+		<div class="col-12">
+		
+		<div style="margin-bottom:10px" class="btn-group float-right">
+			<button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-primary">Previous</button>
+			<button ng-disabled="pageNum == totalPages - 1" ng-click="changePage(1)" class="btn btn-primary">Next</button>
+		</div>		
+		
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Ime i Prezime</th>
+						<th>JMBG</th>
+						<th>Mesto</th>
+						<th>Adresa</th>
+						<th>Telefon</th>
+						<th>Broj Racuna</th>
+						<th>Stanje</th>
+						<th>Izmeni / Obrisi</th>
+					</tr>
+				</thead>
+				<tbody class="redovi">
+					<tr ng-repeat="k in korisnici">
+						<td>{{k.naziv}}</td>
+						<td>{{k.jmbg}}</td>
+						<td>{{k.mesto}}</td>
+						<td>{{k.adresa}}</td>
+						<td>{{k.telefon}}</td>
+						<td>{{k.brojracuna}}</td>
+						<td>{{k.stanje}} din</td>
+						<td><button class="btn btn-warning" ng-click="goToEdit(k.id)">Edit</button>
+						<button class="btn btn-danger" ng-click="doDelete(k.id)">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+</div>

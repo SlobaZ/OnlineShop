@@ -1,0 +1,66 @@
+<div ng-controller="ProizvodiCtrl">
+
+	<br/>	
+	<h3 class="centrirano">Proizvodi</h3>
+	
+	<div class="row">		
+		<div class="col-md-7">
+		<h3>Pretraga proizvoda:</h3>
+		<form>
+			<div class="form-group">
+				<label>Naziv proizvoda</label>
+				<input ng-model="search.naziv" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Kolicina</label>
+				<input ng-model="search.kolicina" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Cena</label>
+				<input ng-model="search.cena" class="form-control">
+			</div>
+			<button ng-click="doSearch()" class="btn btn-primary">Search</button>
+		</form>	
+	</div>
+	<div class="col-md-5">
+	<br/>
+	<h3 class="centrirano">Unos novog proizvoda:</h3>
+	<br/>
+	<div class="centrirano">
+	<button class="btn btn-primary" ng-click="goToAdd()">Add New</button>
+	</div>
+	</div>
+	</div>
+	<br/>
+			
+		<div class="col-12">
+		
+		<div style="margin-bottom:10px" class="btn-group float-right">
+			<button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-primary">Previous</button>
+			<button ng-disabled="pageNum == totalPages - 1" ng-click="changePage(1)" class="btn btn-primary">Next</button>
+		</div>		
+		
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Naziv</th>
+						<th>Kolicina</th>
+						<th>Cena</th>
+						<th>Izmeni / Obrisi</th>
+					</tr>
+				</thead>
+				<tbody class="redovi">
+					<tr ng-repeat="p in proizvodi">
+						<td>{{p.naziv}}</td>
+						<td>{{p.kolicina}}</td>
+						<td>{{p.cena}}</td>
+						<td><button class="btn btn-warning" ng-click="goToEdit(p.id)">Edit</button>
+						<button class="btn btn-danger" ng-click="doDelete(p.id)">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+</div>
