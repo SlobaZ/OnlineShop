@@ -17,4 +17,6 @@ public interface StavkaService {
 	List<Stavka> findByIdKupovine(Integer kupovinaId);
 	
 	Stavka kupiStavku (Integer id , int kolicinaStavke);
+	
+	Stavka resetujStavku (Integer id);
 }
