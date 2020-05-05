@@ -431,7 +431,7 @@ onlineshopApp.controller("KupovineCtrl", function($scope, $http, $location){
 		promise.then(
 			function success(response){
 				$scope.kupovine = response.data;
-				$scope.totalPages = res.headers("totalPages");
+				$scope.totalPages = response.headers("totalPages");
 			},
 			function error(){
 				alert("Couldn't fetch kupovine");
