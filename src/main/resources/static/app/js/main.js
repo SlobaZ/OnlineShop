@@ -441,7 +441,20 @@ onlineshopApp.controller("KupovineCtrl", function($scope, $http, $location){
 	
 	getKupovine();
 
-
+	var getKorisnici = function(){
+		return $http.get(korisniciUrl + "/sve").then(
+			function success(res){
+				$scope.korisnici = res.data;
+				getKupovine();
+			},
+			function error(){
+				alert("Couldn't fetch korisnik.");
+			}
+		);
+	}
+	
+	getKorisnici();
+	
 	
 	$scope.goToAdd = function(){
 		$location.path("/kupovine/add" );
